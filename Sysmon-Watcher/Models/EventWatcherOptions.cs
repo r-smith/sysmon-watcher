@@ -23,7 +23,7 @@
                     }
                     else
                     {
-                        return $"local some {EventRangeMilliseconds}";
+                        return $"local range {EventRangeMilliseconds}";
                     }
                 }
             }
@@ -53,7 +53,7 @@
                     case "all":
                         ShouldReadAllEvents = true;
                         break;
-                    case "some":
+                    case "range":
                         if (args.Length > 3 && long.TryParse(args[3], out long range) && range > 0)
                         {
                             EventRangeMilliseconds = range;
