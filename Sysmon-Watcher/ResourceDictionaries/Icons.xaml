@@ -1,0 +1,42 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+    <!-- Filter -->
+    <DrawingImage x:Key="icon.filter">
+        <DrawingImage.Drawing>
+            <DrawingGroup ClipGeometry="M0,0 V512 H512 V0 H0 Z">
+                <GeometryDrawing Brush="#91b4d5" Geometry="F1 M512,512z M0,0z M487.976,0L24.028,0C2.71,0,-8.047,25.866,7.058,40.971L192,225.941 192,432C192,439.831,195.821,447.17,202.237,451.662L282.237,507.642C298.02,518.69,320,507.493,320,487.98L320,225.941 504.947,40.971C520.021,25.896,509.338,0,487.976,0z" />
+            </DrawingGroup>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+    
+    <!-- Columns -->
+    <DrawingImage x:Key="icon.columns">
+        <DrawingImage.Drawing>
+            <DrawingGroup ClipGeometry="M0,0 V512 H512 V0 H0 Z">
+                <GeometryDrawing Brush="#91b4d5" Geometry="F1 M512,512z M0,0z M464,32L48,32C21.49,32,0,53.49,0,80L0,432C0,458.51,21.49,480,48,480L464,480C490.51,480,512,458.51,512,432L512,80C512,53.49,490.51,32,464,32z M224,416L64,416 64,160 224,160 224,416z M448,416L288,416 288,160 448,160 448,416z" />
+            </DrawingGroup>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+    
+    <!-- Chevrons right-->
+    <DrawingImage x:Key="icon.chevrons-right">
+        <DrawingImage.Drawing>
+            <DrawingGroup ClipGeometry="M0,0 V512 H320 V0 H0 Z">
+                <GeometryDrawing Brush="#e4f0fb" Geometry="F1 M320,512z M0,0z M166.9,264.5L49.1,380.5C44.4,385.2,36.8,385.2,32.1,380.5L25,373.4C20.3,368.7,20.3,361.1,25,356.4L127.3,256 25.1,155.6C20.4,150.9,20.4,143.3,25.1,138.6L32.2,131.5C36.9,126.8,44.5,126.8,49.2,131.5L167,247.5C171.6,252.2,171.6,259.8,166.9,264.5z M294.9,247.5L177.1,131.5C172.4,126.8,164.8,126.8,160.1,131.5L153,138.6C148.3,143.3,148.3,150.9,153,155.6L255.3,256 153.1,356.4C148.4,361.1,148.4,368.7,153.1,373.4L160.2,380.5C164.9,385.2,172.5,385.2,177.2,380.5L295,264.5C299.6,259.8,299.6,252.2,294.9,247.5z" />
+            </DrawingGroup>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+    
+    <!-- Receipt -->
+    <DrawingImage x:Key="icon.receipt">
+        <DrawingImage.Drawing>
+            <DrawingGroup ClipGeometry="M0,0 V512 H384 V0 H0 Z">
+                <DrawingGroup.Transform>
+                    <TranslateTransform X="0" Y="0.026933025568723679" />
+                </DrawingGroup.Transform>
+                <GeometryDrawing Brush="#91b4d5" Geometry="F1 M384,512z M0,0z M358.4,3.2L320,48 265.6,3.2A15.9,15.9,0,0,0,246.4,3.2L192,48 137.6,3.2A15.9,15.9,0,0,0,118.4,3.2L64,48 25.6,3.2C15,-4.7,0,2.8,0,16L0,496C0,509.2,15,516.7,25.6,508.8L64,464 118.4,508.8A15.9,15.9,0,0,0,137.6,508.8L192,464 246.4,508.8A15.9,15.9,0,0,0,265.6,508.8L320,464 358.4,508.8C368.9,516.7,384,509.2,384,496L384,16C384,2.8,369,-4.7,358.4,3.2z M320,360C320,364.4,316.4,368,312,368L72,368C67.6,368,64,364.4,64,360L64,344C64,339.6,67.6,336,72,336L312,336C316.4,336,320,339.6,320,344L320,360z M320,264C320,268.4,316.4,272,312,272L72,272C67.6,272,64,268.4,64,264L64,248C64,243.6,67.6,240,72,240L312,240C316.4,240,320,243.6,320,248L320,264z M320,168C320,172.4,316.4,176,312,176L72,176C67.6,176,64,172.4,64,168L64,152C64,147.6,67.6,144,72,144L312,144C316.4,144,320,147.6,320,152L320,168z" />
+            </DrawingGroup>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+</ResourceDictionary>
