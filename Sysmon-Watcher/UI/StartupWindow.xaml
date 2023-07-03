@@ -121,7 +121,8 @@
                     </StackPanel>
                     
                     <!-- Start button -->
-                    <Button Content="Start"
+                    <Button x:Name="StartButton"
+                            Content="Start"
                             Click="Start_Click"
                             Width="120"
                             Height="35"

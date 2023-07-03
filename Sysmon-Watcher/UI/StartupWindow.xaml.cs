@@ -19,6 +19,7 @@ namespace Sysmon_Watcher.UI
 
         private void Start_Click(object sender, RoutedEventArgs e)
         {
+            StartButton.IsEnabled = false;
             if (TargetRemoteOption.IsChecked == true)
             {
                 WatchRemoteComputer();
@@ -27,6 +28,7 @@ namespace Sysmon_Watcher.UI
             {
                 WatchLocalComputer();
             }
+            StartButton.IsEnabled = true;
         }
 
         private EventWatcherOptions BuildWatcherOptions()
