@@ -125,7 +125,11 @@ namespace Sysmon_Watcher.UI
                 catch (Exception ex)
                 {
                     // Something went wrong when relaunching the application as admin.
-                    MessageBox.Show(ex.Message);
+                    MessageWindow window = new MessageWindow(ex.Message)
+                    {
+                        Owner = this
+                    };
+                    window.ShowDialog();
                 }
             }
             else
