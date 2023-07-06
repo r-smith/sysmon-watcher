@@ -12,8 +12,8 @@
         Background="#0a0a0a"
         MinHeight="250"
         MinWidth="300"
-        Height="475"
-        Width="900">
+        Height="500"
+        Width="950">
     <WindowChrome.WindowChrome>
         <WindowChrome CaptionHeight="32" ResizeBorderThickness="{x:Static SystemParameters.WindowResizeBorderThickness}" GlassFrameThickness="0" CornerRadius="0" />
     </WindowChrome.WindowChrome>
