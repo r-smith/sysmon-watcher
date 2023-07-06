@@ -125,6 +125,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="UI\MessageWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UI\StartupWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -157,6 +161,9 @@
     </Compile>
     <Compile Include="UI\FiltersWindow.xaml.cs">
       <DependentUpon>FiltersWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\MessageWindow.xaml.cs">
+      <DependentUpon>MessageWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="UI\StartupWindow.xaml.cs">
       <DependentUpon>StartupWindow.xaml</DependentUpon>
