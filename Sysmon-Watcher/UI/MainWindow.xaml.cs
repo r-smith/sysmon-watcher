@@ -20,6 +20,7 @@ namespace Sysmon_Watcher
         private readonly ICollectionView CreateProcessView;
         private readonly ICollectionView FileCreateView;
         private readonly ICollectionView RegistryEventView;
+        private readonly EventWatcherOptions EventWatcherOptions;
 
         public MainWindow(EventWatcherOptions options)
         {
@@ -50,7 +51,23 @@ namespace Sysmon_Watcher
             RegistryEventGrid.ItemsSource = RegistryEventView;
 
             UpdateColumns();
-            WindowsEventWatcher.SubscribeToSysmonEvents(options);
+            EventWatcherOptions = options;
+        }
+
+        private async void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                await WindowsEventWatcher.SubscribeToSysmonEvents(EventWatcherOptions);
+            }
+            catch (Exception ex)
+            {
+                MessageWindow window = new MessageWindow($"Failed subscribing to event log. {ex.Message}")
+                {
+                    Owner = this
+                };
+                window.ShowDialog();
+            }
         }
 
         private bool ApplyFilter(object entry)

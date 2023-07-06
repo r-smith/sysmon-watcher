@@ -10,7 +10,7 @@ namespace Sysmon_Watcher.Helpers
 {
     internal static class WindowsEventWatcher
     {
-        public async static void SubscribeToSysmonEvents(EventWatcherOptions options)
+        public async static Task SubscribeToSysmonEvents(EventWatcherOptions options)
         {
             // Build time range string used for event query.
             string range = "";
@@ -28,32 +28,39 @@ namespace Sysmon_Watcher.Helpers
                 + "</QueryList>";
 
             EventLogWatcher watcher = null;
-            await Task.Run(() =>
+            try
             {
-                try
+                await Task.Run(() =>
                 {
-                    EventLogQuery logQuery = new EventLogQuery("Microsoft-Windows-Sysmon/Operational", PathType.LogName, eventQuery);
-                    if (options.IsRemoteWatcher && !string.IsNullOrWhiteSpace(options.TargetComputer))
+                    try
                     {
-                        EventLogSession eventLogSession = new EventLogSession(options.TargetComputer);
-                        logQuery.Session = eventLogSession;
+                        EventLogQuery logQuery = new EventLogQuery("Microsoft-Windows-Sysmon/Operational", PathType.LogName, eventQuery);
+                        if (options.IsRemoteWatcher && !string.IsNullOrWhiteSpace(options.TargetComputer))
+                        {
+                            EventLogSession eventLogSession = new EventLogSession(options.TargetComputer);
+                            logQuery.Session = eventLogSession;
+                        }
+                        watcher = new EventLogWatcher(eventQuery: logQuery,
+                                                      bookmark: null,
+                                                      readExistingEvents: options.ShouldReadExistingEvents);
+                        watcher.EventRecordWritten += new EventHandler<EventRecordWrittenEventArgs>(EventLogEventRead);
+                        watcher.Enabled = true;
                     }
-                    watcher = new EventLogWatcher(eventQuery: logQuery,
-                                                  bookmark: null,
-                                                  readExistingEvents: options.ShouldReadExistingEvents);
-                    watcher.EventRecordWritten += new EventHandler<EventRecordWrittenEventArgs>(EventLogEventRead);
-                    watcher.Enabled = true;
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Failed subscribing to event log: " + ex.Message);
-                    if (watcher != null)
+                    catch (Exception ex)
                     {
-                        watcher.Enabled = false;
-                        watcher.Dispose();
+                        if (watcher != null)
+                        {
+                            watcher.Enabled = false;
+                            watcher.Dispose();
+                        }
+                        throw ex;
                     }
-                }
-            });
+                });
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         private static void EventLogEventRead(object obj, EventRecordWrittenEventArgs arg)
