@@ -47,6 +47,23 @@
                     <ColumnDefinition Width="Auto" />
                 </Grid.ColumnDefinitions>
 
+                <!-- Icon -->
+                <Image Source="{StaticResource icon.robot}"
+                       Margin="6,0,4,0"
+                       Width="22"
+                       Height="22">
+                    <Image.Style>
+                        <Style TargetType="Image">
+                            <Setter Property="Opacity" Value="1"/>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding IsActive, RelativeSource={RelativeSource AncestorType={x:Type Window}}}" Value="False">
+                                    <Setter Property="Opacity" Value="0.4"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Image.Style>
+                </Image>
+                
                 <!-- Title -->
                 <TextBlock Grid.Column="1"
                            Margin="4,0,0,0"
