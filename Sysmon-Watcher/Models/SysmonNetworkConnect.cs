@@ -2,7 +2,6 @@
 using System.Collections.ObjectModel;
 using System.IO;
 using System.Net;
-using System.Windows.Navigation;
 
 namespace Sysmon_Watcher.Models
 {
@@ -21,7 +20,7 @@ namespace Sysmon_Watcher.Models
                 new Column(bindingPath: "ProcessGuid", header: "Process GUID", isSelectedByDefault: false),
                 new Column(bindingPath: "ProcessId", header: "Process ID", isSelectedByDefault: false),
                 new Column(bindingPath: "Image", header: "Image", isSelectedByDefault: true),
-                new Column(bindingPath: "User", header: "User", isSelectedByDefault: false),
+                new Column(bindingPath: "User", header: "User", isSelectedByDefault: true),
                 new Column(bindingPath: "Protocol", header: "Protocol", isSelectedByDefault: false),
                 new Column(bindingPath: "Initiated", header: "Initiated", isSelectedByDefault: false),
                 new Column(bindingPath: "SourceIsIpv6", header: "Src IPv6?", isSelectedByDefault: false),
@@ -31,7 +30,7 @@ namespace Sysmon_Watcher.Models
                 new Column(bindingPath: "SourcePortName", header: "Src Service", isSelectedByDefault: false),
                 new Column(bindingPath: "DestinationIsIpv6", header: "Dst IPv6?", isSelectedByDefault: false),
                 new Column(bindingPath: "DestinationIp", header: "Dst IP", isSelectedByDefault: true),
-                new Column(bindingPath: "DestinationHostname", header: "Dst Hostname", isSelectedByDefault: false),
+                new Column(bindingPath: "DestinationHostname", header: "Dst Hostname", isSelectedByDefault: true),
                 new Column(bindingPath: "DestinationPort", header: "Dst Port", isSelectedByDefault: true),
                 new Column(bindingPath: "DestinationPortName", header: "Dst Service", isSelectedByDefault: false),
             };
