@@ -16,6 +16,8 @@
         WindowStyle="None"
         Background="#1d2130"
         Title="Filters"
+        MinHeight="300"
+        MinWidth="370"
         Height="450"
         Width="725">
     <Window.Resources>
@@ -92,9 +94,9 @@
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="170"/>
-                        <ColumnDefinition Width="90"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="80"/>
+                        <ColumnDefinition MaxWidth="90"/>
+                        <ColumnDefinition Width="*" MinWidth="20"/>
+                        <ColumnDefinition MaxWidth="80"/>
                     </Grid.ColumnDefinitions>
                     <ComboBox x:Name="FilterColumn" Grid.Column="0" Margin="0,0,5,0"/>
                     <ComboBox x:Name="FilterComparison" Grid.Column="1" Margin="0,0,5,0"/>
@@ -109,7 +111,7 @@
                     <Button Content="C_lear" HorizontalAlignment="Left" Click="Clear_Click" Width="90"/>
                     <StackPanel Grid.Column="1" Orientation="Horizontal">
                         <Button Content="_Add" Click="Add_Click" Width="90"/>
-                        <Button Content="_Remove" Click="Remove_Click" Width="90" Margin="10,0,0,0"/>
+                        <Button Content="_Remove" Click="Remove_Click" Width="90" Margin="8,0,0,0"/>
                     </StackPanel>
                 </Grid>
                 <DataGrid x:Name="FiltersGrid"
@@ -125,8 +127,8 @@
                     </DataGrid.Columns>
                 </DataGrid>
                 <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,15,0,0">
-                    <Button Content="_OK" Click="OK_Click" Width="90" HorizontalAlignment="Left" Margin="0,0,10,0"/>
-                    <Button Content="_Cancel" Click="OnCloseButtonClick" IsCancel="True" Width="90" HorizontalAlignment="Left" Margin="0,0,10,0"/>
+                    <Button Content="_OK" Click="OK_Click" Width="90" HorizontalAlignment="Left" Margin="0,0,8,0"/>
+                    <Button Content="_Cancel" Click="OnCloseButtonClick" IsCancel="True" Width="90" HorizontalAlignment="Left" Margin="0,0,8,0"/>
                     <Button Content="A_pply" Click="Apply_Click" Width="90" HorizontalAlignment="Left" Margin="0,0,0,0"/>
                 </StackPanel>
             </Grid>

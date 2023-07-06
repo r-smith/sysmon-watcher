@@ -9,8 +9,8 @@
         WindowStyle="None"
         Background="#1d2130"
         Title="Sysmon Watcher"
+        SizeToContent="WidthAndHeight"
         Height="400"
-        SizeToContent="Height"
         Width="300">
     <WindowChrome.WindowChrome>
         <WindowChrome CaptionHeight="32" ResizeBorderThickness="{x:Static SystemParameters.WindowResizeBorderThickness}" GlassFrameThickness="0" CornerRadius="0" />

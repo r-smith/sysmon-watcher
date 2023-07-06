@@ -14,6 +14,8 @@
         WindowStyle="None"
         Background="#1d2130"
         Title="Columns"
+        MinHeight="250"
+        MinWidth="338"
         Height="440"
         Width="600">
     <WindowChrome.WindowChrome>
